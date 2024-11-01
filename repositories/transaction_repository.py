@@ -3,9 +3,10 @@ from models.transaction import Transaction, db
 
 class TransactionRepository:
     @staticmethod
-    def create_transaction_repository(user_id, destination, details):
+    def create_transaction_repository(user_id, account_id, destination, details):
         transaction = Transaction(
             user_id = user_id,
+            account_id = account_id,
             date = datetime.now(timezone.utc)
             destination = destination,
             status = "Started",
